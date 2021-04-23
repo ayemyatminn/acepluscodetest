@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200"
+            android:background="@color/primary_dark">
+
+            <ImageView
+                android:id="@+id/ivback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:layout_margin="@dimen/margin_medium"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvUserIamge"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/dimen_150"
+                android:layout_height="@dimen/dimen_150"
+                android:layout_margin="@dimen/margin_medium"
+                app:cardCornerRadius="@dimen/margin_medium"
+                android:elevation="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dummy_user"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_user_name"
+            android:layout_below="@id/rlHeader"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_centerInParent="true"
+            style="@style/text_header_bold"
+            android:padding="@dimen/margin_medium"/>
+
+        <View
+            android:id="@+id/vDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/secondary_text"
+            android:layout_below="@id/tvUserName"/>
+
+        <LinearLayout
+            android:id="@+id/llEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/vDivider"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/icon_size"
+                android:layout_weight="2"
+                android:src="@drawable/ic_email"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/lbl_email"
+                style="@style/text_regular_2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/dummy_user_email"
+                style="@style/text_regular_2_bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/llEmail"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/icon_size"
+                android:layout_weight="2"
+                android:src="@drawable/ic_address"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/lbl_address"
+                style="@style/text_regular_2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/dummey_user_address"
+                style="@style/text_regular_2_bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/llAddress"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/icon_size"
+                android:layout_weight="2"
+                android:src="@drawable/ic_phone"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/lbl_Phone"
+                style="@style/text_regular_2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/dummey_user_phone"
+                style="@style/text_regular_2_bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/llPhone"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/icon_size"
+                android:layout_weight="2"
+                android:src="@drawable/ic_site"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/lbl_website"
+                style="@style/text_regular_2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/dummey_user_website"
+                style="@style/text_regular_2_bold"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

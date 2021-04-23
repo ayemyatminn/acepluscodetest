@@ -1,0 +1,93 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.ayemyatminn.myapplication"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug{
+            minifyEnabled false
+        }
+    }
+    flavorDimensions "code-test-flavor"
+
+    productFlavors {
+
+        def BUILD_TYPE_FIELD = "MM_BUILD_TYPE"
+        def BUILD_TYPE_DEV = "\"Local\""
+        def BUILD_TYPE_QA = "\"Staging\""
+        def BUILD_TYPE_RELEASE = "\"Production\""
+
+        //TODO change endpoint
+        def ENDPOINT_FIELD = "MM_ENDPOINT"
+        def ENDPOINT_DEV = "\"https://jsonplaceholder.typicode.com/users/\""
+        def ENDPOINT_QA = "\"https://jsonplaceholder.typicode.com/users /\""
+        def ENDPOINT_RELEASE = "\"https://jsonplaceholder.typicode.com/users /\""
+
+        def APP_LABEL = "launcher_name"
+        def LABEL_DEV = "\"Code Test (Dev)\""
+        def LABEL_QA = "\"Code Test (QA)\""
+        def LABEL_RELEASE = "\"Code Test \""
+
+        local {
+            applicationId = "com.ayemyatminn.myapplication.dev"
+            buildConfigField "String", BUILD_TYPE_FIELD, BUILD_TYPE_DEV
+            buildConfigField "String", ENDPOINT_FIELD, ENDPOINT_DEV
+            resValue "string", APP_LABEL, LABEL_DEV
+        }
+
+        staging {
+            applicationId = "com.ayemyatminn.myapplication.qa"
+            buildConfigField "String", BUILD_TYPE_FIELD, BUILD_TYPE_QA
+            buildConfigField "String", ENDPOINT_FIELD, ENDPOINT_QA
+            resValue "string", APP_LABEL, LABEL_QA
+        }
+
+        production {
+            applicationId = "com.ayemyatminn.myapplication"
+            buildConfigField "String", BUILD_TYPE_FIELD, BUILD_TYPE_RELEASE
+            buildConfigField "String", ENDPOINT_FIELD, ENDPOINT_RELEASE
+            resValue "string", APP_LABEL, LABEL_RELEASE
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

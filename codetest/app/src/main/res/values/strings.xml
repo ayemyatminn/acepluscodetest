@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">User Lists</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="dummy_user_name">Kung Fu Panda</string>
+    <string name="dummy_user_email">pandakungfu007@gmail.com</string>
+    <string name="dummey_user_address">808 Cardinal Lane,Paris, Llinois (IL) 61944 </string>
+    <string name="dummey_user_phone" tools:ignore="TypographyDashes">217–264-5598,217-251-1834</string>
+    <string name="dummey_user_website">www.google.com</string>
+
+    <string name="lbl_email">Email =</string>
+    <string name="lbl_address">Address =</string>
+    <string name="lbl_Phone">Phone =</string>
+    <string name="lbl_website">Website =</string>
+
+</resources>
